@@ -42,5 +42,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-storage:20.2.1'
     implementation 'com.firebaseui:firebase-ui-database:6.2.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
 
 }

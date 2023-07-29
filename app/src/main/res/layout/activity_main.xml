@@ -79,4 +79,69 @@
         android:background="@drawable/button_click_ripple"
         android:textColor="@color/white"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRead"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Read PDF"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="19sp"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.06"
+        android:textAllCaps="false"
+        android:id="@+id/btnViewPdf"
+        android:background="@drawable/button_click_ripple"
+
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_click_ripple"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.06"
+        android:onClick="cancelViewPdf"
+        android:text="Cancel"
+        android:visibility="gone"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="19sp" />
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_click_ripple"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.06"
+            android:onClick="cancelViewPdf"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+    </com.github.barteksc.pdfviewer.PDFView>
+
 </RelativeLayout>

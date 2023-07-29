@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pdfreadercodeclause.model.FileinModel;
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     EditText edit;
     Button uploadBTn;
 
+    private PDFView pdfView;
+    private Button viewPdfBtn;
+
     StorageReference storageReference;
     DatabaseReference databaseReference;
 
@@ -39,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pdfView = findViewById(R.id.pdfView);
+        viewPdfBtn = findViewById(R.id.btnViewPdf);
+        viewPdfBtn.setVisibility(View.GONE);
 
         edit = findViewById(R.id.editText);
         uploadBTn = findViewById(R.id.btn);
@@ -100,9 +109,41 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            viewPdfBtn.setVisibility(View.VISIBLE);
+            viewPdfBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Call a method to display the selected PDF in the PDF View
+                    displaySelectedPDF(data.getData());
+                }
+            });
+
 
         }
 
+    }
+
+    private void displaySelectedPDF(Uri data) {
+        try {
+            // Load the selected PDF into the PDF View
+            pdfView.fromUri(data)
+                    .defaultPage(0)
+                    .enableSwipe(true)
+                    .swipeHorizontal(false)
+                    .enableDoubletap(true)
+                    .scrollHandle(new DefaultScrollHandle(this))
+                    .load();
+
+            // Hide the other views and show the PDF View
+            edit.setVisibility(View.GONE);
+            uploadBTn.setVisibility(View.GONE);
+            viewPdfBtn.setVisibility(View.GONE);
+            pdfView.setVisibility(View.VISIBLE);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error loading PDF", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void uploadPDF(Uri data) {
@@ -144,5 +185,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void cancelViewPdf(View view) {
+        // Hide the PDF View and show the other views
+        pdfView.setVisibility(View.GONE);
+        edit.setVisibility(View.VISIBLE);
+        uploadBTn.setVisibility(View.VISIBLE);
+        viewPdfBtn.setVisibility(View.VISIBLE);
     }
 }
