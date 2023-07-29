@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PDFReaderCodeClause" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/teal</item>
+    </style>
+
+    <style name="Theme.PDFReaderCodeClause" parent="Base.Theme.PDFReaderCodeClause" />
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "676165877928",
+    "project_id": "pdf-reader-6061d",
+    "storage_bucket": "pdf-reader-6061d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676165877928:android:2da6875901eef8c25e829d",
+        "android_client_info": {
+          "package_name": "com.example.pdfreadercodeclause"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676165877928-qbquk847qjpus4t5uamec17a9pq6g41e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pdfreadercodeclause",
+            "certificate_hash": "3b1fc224c4c0420b4e2a36a947ca317d89f8af30"
+          }
+        },
+        {
+          "client_id": "676165877928-mm9lm2um67ksuevni2a0shmtmrov8ftu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDldhNi9rAioSS6i9WTvLH774nE3Y15EUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676165877928-mm9lm2um67ksuevni2a0shmtmrov8ftu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
